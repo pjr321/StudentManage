@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学员管理</title>
+    <link rel="icon" href="/static/picture/lllogo.png">
+    <link rel="stylesheet" href="/static/plugin/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/plugin/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="/static/css/commons.css" />
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <div class="pg-header">
+        <div class="logo">
+            <img class="logo-img" src="/static/picture/lllogo.png">
+            <a class="link logo-text left" data-hover="学生后台管理">学生后台管理</a>
+        </div>
+
+        <div class="avatar right">
+            <img class="avatar-img" src="/static/picture/avatar.png">
+            <div class="user-info" data-toggle="tab">
+                <a><i style="margin-right: 5px" class="fa fa-user"></i>个人资料</a>
+                <a href="/sign/"><i style="margin-right: 5px" class="fa fa-sign-out"></i>注销</a>
+            </div>
+        </div>
+        <div class="rmenus right">
+            <a id="fa-search"><i class="fa fa-search"></i></a>
+            <input type="text" id="global_search" style="display: none">
+            <a><i class="fa fa-commenting-o"></i></a>
+            <a><i class="fa fa-envelope-o"></i></a>
+        </div>
+    </div>
+    <div class="pg-body">
+            <aside class="left-panel">
+                <div class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="sg" href="/student/"><i class="fa fa-user-o" ></i>学生管理</a>
+                        </li>
+                        <li>
+                           <a class="kg" href="/course/"><i class="fa fa-user-circle" ></i>课程管理</a>
+                        </li>
+                        <li>
+                           <a class="lg" href="/teacher/"><i class="fa fa-user-circle-o" ></i>老师管理</a>
+                        </li>
+                        <li>
+                           <a href="/admin_ana/"><i class="fa fa-line-chart" ></i>数据分析</a>
+                        </li>
+                        <li>
+                           <a class="lg" href="/log/"><i class="fa fa-list" ></i>日志系统</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        <div class="content">
+             {% block xx %}
+             {% endblock %}
+        </div>
+    </div>
+    {% block js %}
+    {% endblock %}
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/static/plugin/photoviewerjs/js/photoviewer.js"></script>
+    <script>
+        $(function () {
+            // 点击search按钮弹出输入框
+            $('.fa-search').click(function () {
+                $('#global_search').show(500);
+            });
+            //点击空白处隐藏输入框
+            $(document).bind("click", function (e){
+                var gs = $('#global_search');
+                if (!gs.is(e.target)&& $((e.target )).closest("#fa-search").length == 0)
+                {
+                       $('#global_search').hide(500);
+                }
+            });
+            $("#global_search").bind("keydown",function(e){
+            　　// 兼容FF和IE和Opera
+            　　var theEvent = e || window.e;
+            　　var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            　　 if (code == 13) {
+            　　//回车执行查询
+                   search = $('#global_search').val();
+            　　  location.href='/global_search/?search=%s'.replace('%s',search);
+            　　}
+            });
+            $('.fa-commenting-o').mouseover(function () {
+                $(this).removeClass('fa-commenting-o').addClass('fa-commenting');
+            });
+            $('.fa-commenting-o').mouseout(function () {
+                $(this).removeClass('fa-commenting').addClass('fa-commenting-o');
+            });
+            $('.fa-envelope-o').mouseover(function () {
+                $(this).removeClass('fa-envelope-o').addClass('fa-envelope');
+            });
+            $('.fa-envelope-o').mouseout(function () {
+                $(this).removeClass('fa-envelope').addClass('fa-envelope-o');
+            });
+            $('#avatar').hover(function (e) {
+              e.preventDefault();
+              $('#user-info').tab('show');
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery基于窗口的照片查看器插件</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link href="css/photoviewer.css" rel="stylesheet">
+	<link href="css/snack.css" rel="stylesheet">
+	<link href="css/snack-helper.css" rel="stylesheet">
+	<link href="css/docs.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+	<!--[if lt IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>jQuery基于窗口的照片查看器插件 <span>A jQuery plugin designed to provide gallery view for images</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.jb51.net/" title="脚本之家" target="_blank"><span> 脚本之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.jb51.net/" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="container">
+    <!-- Getting Started -->
+    <h2 class="b-b-1 p-b-10 p-t-10 m-t-30">Getting Started</h2>
+    <p>All the pictures come from Flickr website, copyright to the original author.</p>
+    <!-- Initialization -->
+    <h3>Initialization</h3>
+    <h4>Step 1: HTML结构</h4>
+    <pre class="prettyprint">
+&lt;!-- Core CSS file --&gt;
+&lt;link href=&quot;/path/to/photoviewer.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;!-- JQuery file --&gt;
+&lt;script src=&quot;/path/to/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Core JS file --&gt;
+&lt;script src=&quot;/path/to/photoviewer.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+    <h4>Step 2: 初始化</h4>
+    <p>The usage of photoviewer is very simple, the
+      <code>PhotoViewer</code> constructor has 2 argument.</p>
+    <ol>
+      <li>Array with objects of image info.</li>
+      <li>Options</li>
+    </ol>
+    <pre class="prettyprint">
+// build images array
+var items = [
+    {
+        src: 'path/to/image1.jpg', // path to image
+        caption: 'Image Caption 1' // If you skip it, there will display the original image name(image1)
+    },
+    {
+        src: 'path/to/image2.jpg',
+        caption: 'Image Caption 2'
+    }
+];
+
+// define options (if needed)
+var options = {
+    // optionName: 'option value'
+    // for example:
+    index: 0 // this option means you will start at first image
+};
+
+// Initialize the plugin
+var viewer = new PhotoViewer(items, options);
+</pre>
+
+    <p>At last, binding click event on a button element, you should get the following example.</p>
+
+    <p>
+      <button type="button" class="btn default">Open PhotoViewer</button>
+    </p>
+
+    <!-- Initializing form a list of links -->
+    <h3>使用超链接元素</h3>
+    <p>There have 2 ways to initializing the plugin form a list of links.</p>
+    <h4>Way 1: Bind event to links manually</h4>
+    <p>The default DOM structure as following:</p>
+    <pre class="prettyprint">
+&lt;a data-gallery=&quot;manual&quot; href=&quot;big-1.jpg&quot;&gt;
+  &lt;img src=&quot;small-1.jpg&quot;&gt;
+&lt;/a&gt;
+&lt;a data-gallery=&quot;manual&quot; href=&quot;big-2.jpg&quot;&gt;
+  &lt;img src=&quot;small-2.jpg&quot;&gt;
+&lt;/a&gt;
+&lt;a data-gallery=&quot;manual&quot; href=&quot;big-3.jpg&quot;&gt;
+  &lt;img src=&quot;small-3.jpg&quot;&gt;
+&lt;/a&gt;
+</pre>
+
+    <p>You should get the image src and the index of element clicked manually to create the images array.</p>
+    <pre class="prettyprint">
+$('[data-gallery=manual]').click(function (e) {
+
+  e.preventDefault();
+
+  var items = [],
+    // get index of element clicked
+    options = {
+      index: $(this).index()
+    };
+  
+  // looping to create images array
+  $('[data-gallery=manual]').each(function () {
+    let src = $(this).attr('href');
+    items.push({
+      src: src
+    });
+  });
+
+  new PhotoViewer(items, options);
+
+});
+</pre>
+
+    <p>Look at the following example:</p>
+    <div class="image-set">
+      <a data-gallery="manual" href="https://farm5.staticflickr.com/4267/34162425794_1430f38362_z.jpg" data-group="b">
+        <img src="https://farm5.staticflickr.com/4267/34162425794_1430f38362_s.jpg" alt="">
+      </a>
+      <a data-gallery="manual" href="https://farm5.staticflickr.com/4304/35957594681_187d1eab44_z.jpg" data-group="b">
+        <img src="https://farm5.staticflickr.com/4304/35957594681_187d1eab44_s.jpg" alt="">
+      </a>
+      <a data-gallery="manual" href="https://farm1.staticflickr.com/512/32967783396_a6b4babd92_z.jpg" data-group="b">
+        <img src="https://farm1.staticflickr.com/512/32967783396_a6b4babd92_s.jpg" alt="">
+      </a>
+    </div>
+
+    <h4>Way 2: Initializing as jQuery plugin</h4>
+    <p>If you use PhotoViewer as a jQuery plugin, it's just same to
+      <a href="https://github.com/nzbin/magnify" target="_blank">Magnify</a> except namespace.</p>
+    <p>You can make DOM structure like this</p>
+    <pre class="prettyprint">
+&lt;a data-gallery=&quot;jquery&quot; href=&quot;big-1.jpg&quot;&gt;
+  &lt;img src=&quot;small-1.jpg&quot;&gt;
+&lt;/a&gt;
+&lt;a data-gallery=&quot;jquery&quot; href=&quot;big-2.jpg&quot;&gt;
+  &lt;img src=&quot;small-2.jpg&quot;&gt;
+&lt;/a&gt;
+&lt;a data-gallery=&quot;jquery&quot; href=&quot;big-3.jpg&quot;&gt;
+  &lt;img src=&quot;small-3.jpg&quot;&gt;
+&lt;/a&gt;
+</pre>
+    <p>or</p>
+    <pre class="prettyprint">
+&lt;img data-gallery=&quot;jquery&quot; data-src=&quot;big-1.jpg&quot; src=&quot;small-1.jpg&quot;&gt;
+&lt;img data-gallery=&quot;jquery&quot; data-src=&quot;big-2.jpg&quot; src=&quot;small-2.jpg&quot;&gt;
+&lt;img data-gallery=&quot;jquery&quot; data-src=&quot;big-3.jpg&quot; src=&quot;small-3.jpg&quot;&gt;
+</pre>
+
+    <p>All structures above have optional attributes as below:</p>
+    <ul>
+      <li>Add a
+        <code>data-src</code> attribute to link big image if you do not want to use a
+        <code>&lt;a&gt;</code> tag. If you use it in a
+        <code>&lt;a&gt;</code> tag, it will override the image link in
+        <code>href</code> attribute.</li>
+      <li>Add a
+        <code>data-caption</code> attribute if you want to show a caption. If you are not using this attribute, it will show the image name in the
+        url when you set the
+        <code>title</code> option
+        <code>true</code>.</li>
+      <li>Add a
+        <code>data-group</code> attribute if you want to set the images in groups.
+      </li>
+    </ul>
+
+    <p>Initializing as jQuery plugin is the simplest.</p>
+    <pre class="prettyprint">
+$('[data-gallery=jquery]').photoviewer(options);
+</pre>
+    <p>If you add attribute
+      <code>data-photoviewer</code>, you can write none of js, it will initialize automaticlly.</p>
+    <div class="image-set">
+      <a data-gallery="jquery" data-caption="Slipping Away by Jerry Fryer" data-group="a" href="https://farm1.staticflickr.com/313/31812080833_297acfbbd9_z.jpg">
+        <img src="https://farm1.staticflickr.com/313/31812080833_297acfbbd9_s.jpg" alt="">
+      </a>
+      <a data-gallery="jquery" data-caption="Mi Fuego by albert dros" data-group="a" href="https://farm4.staticflickr.com/3804/33589584740_b0fbdcd4aa_z.jpg">
+        <img src="https://farm4.staticflickr.com/3804/33589584740_b0fbdcd4aa_s.jpg" alt="">
+      </a>
+      <a data-gallery="jquery" data-caption="Winter Fairytale by Achim Thomae" data-group="a" href="https://farm1.staticflickr.com/470/31340603494_fb7228020d_z.jpg">
+        <img src="https://farm1.staticflickr.com/470/31340603494_fb7228020d_s.jpg" alt="">
+      </a>
+    </div>
+
+    <!-- Options -->
+    <h2 class="b-b-1 p-b-10 p-t-10 m-t-30">Options</h2>
+    <h3>
+      <code>index</code>
+      <small>
+        <code>number 0</code>
+      </small>
+    </h3>
+    <p>The images array index. If
+      <code>0</code>, it will show first image when photoviewer opened.</p>
+    <h3>
+      <code>draggble</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If ture, it allow modal dragging.</p>
+    <h3>
+      <code>resizable</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If ture, it allow modal resizing.</p>
+    <h3>
+      <code>movable</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If ture, it allow image moving.</p>
+    <h3>
+      <code>keyboard</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>Make photoviewer can be controled by keyboard. The shortcut key is similar to Windows photo viewer.</p>
+    <ul>
+      <li>
+        <kbd>←</kbd> prev image
+      </li>
+      <li>
+        <kbd>→</kbd> next image
+      </li>
+      <li>
+        <kbd>+</kbd> zoom in image
+      </li>
+      <li>
+        <kbd>-</kbd> zoom out image</li>
+      <li>
+        <kbd>ctrl</kbd> +
+        <kbd>alt</kbd> +
+        <kbd>0</kbd> image autual size
+      </li>
+      <li>
+        <kbd>ctrl</kbd> +
+        <kbd>,</kbd> rotate image left
+      </li>
+      <li>
+        <kbd>ctrl</kbd> +
+        <kbd>.</kbd> rotate image right
+      </li>
+    </ul>
+    <h3>
+      <code>title</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If ture, it will show image title on header.</p>
+    <h3>
+      <code>fixedModalSize</code>
+      <small>
+        <code>boolean false</code>
+      </small>
+    </h3>
+    <p>This option will set photoviewer's size when it opened. If false, the modal initialized size will fit to image size.
+      If true, the modal initialized size will be set with modalWidth and modalHeight.</p>
+    <h3>
+      <code>modalWidth</code>
+      <small>
+        <code>320</code>
+      </small>
+    </h3>
+    <p>It's the modal min width or modal initialized width when opened.</p>
+    <h3>
+      <code>modalHeight</code>
+      <small>
+        <code>320</code>
+      </small>
+    </h3>
+    <p>It's the modal min height or modal initialized height when opened.</p>
+    <h3>
+      <code>gapThreshold</code>
+      <small>
+        <code>number 0.02</code>
+      </small>
+    </h3>
+    <p>The gap size threshold. There will have a gap if modal too large to beyond the browser. Its min value is
+      <code>0</code>, means the modal's width or height should be equal to browser window if it's too large.</p>
+    <h3>
+      <code>ratioThreshold</code>
+      <small>
+        <code>number 0.01</code>
+      </small>
+    </h3>
+    <p>Image zoom ratio threshold.</p>
+    <h3>
+      <code>minRatio</code>
+      <small>
+        <code>number 0.1</code>
+      </small>
+    </h3>
+    <p>The min ratio to show image.
+      <code>0.1</code> means the image can be zoomed 0.1x from original size.</p>
+    <h3>
+      <code>maxRatio</code>
+      <small>
+        <code>number 16</code>
+      </small>
+    </h3>
+    <p>The max ratio to show image.
+      <code>16</code> means the image can be zoomed 16x from original size.</p>
+
+    <h3>
+      <code>headToolbar</code>
+      <small>
+        <code>array ['maximize','close']</code>
+      </small>
+    </h3>
+    <p>The buttons display in header toolbar.</p>
+    <h3>
+      <code>footToolbar</code>
+      <small>
+        <code>array ['zoomIn','zoomOut','prev','fullscreen','next','actualSize','rotateRight']</code>
+      </small>
+    </h3>
+    <p>The buttons display in footer toolbar.</p>
+    <h3>
+      <code>fixedContent</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If true, the document page can not scoll.</p>
+
+    <h3>
+      <code>initMaximized</code>
+      <small>
+        <code>boolean false</code>
+      </small>
+    </h3>
+    <p>If false, the modal size will be set of image size or what you set with modalWidth and modalHeight. If true, the modal
+      size will be set maximized when initialized just like other lightbox.
+    </p>
+    <h3>
+      <code>initAnimation</code>
+      <small>
+        <code>boolean true</code>
+      </small>
+    </h3>
+    <p>If false, it will not have animation at plugin's initialized.</p>
+    <h3>
+      <code>fixedModalPos</code>
+      <small>
+        <code>boolean false</code>
+      </small>
+    </h3>
+    <p>If true, the modal position will be fixed when change images.</p>
+    <h3>
+      <code>zIndex</code>
+      <small>
+        <code>number 1090</code>
+      </small>
+    </h3>
+    <p>The modal style of z-index, it is useful with multiple instances.</p>
+    <h3>
+      <code>dragHandle</code>
+      <small>
+        <code>string modal</code>
+      </small>
+    </h3>
+    <p>The handle of draggable.</p>
+    <h3>
+      <code>icons</code>
+      <small>
+        <code>object</code>
+      </small>
+    </h3>
+    <p>You can customize the icons class in following key.</p>
+    <h3>
+      <code>i18n</code>
+      <small>
+        <code>object</code>
+      </small>
+    </h3>
+    <p>You can customize the buttons title in following key.</p>
+
+
+    <footer class="footer text-center">
+      <p class="text-center">Designed by
+        <a href="https://github.com/nzbin" target="_blank">nzbin</a> ❤️ Made with using
+        <a href="https://github.com/nzbin/snack" target="_blank">snack</a>
+      </p>
+    </footer>
+  </div>
+
+	</div>
+	
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="https://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/photoviewer.js"></script>
+  <script>
+
+    window.prettyPrint && prettyPrint();
+
+    // initialize with an array of objects
+    $('button').click(function () {
+
+      new PhotoViewer([{
+        src: 'https://c1.staticflickr.com/3/2136/32571842110_faadf0b1a7_k.jpg',
+        caption: 'Glendalough Upper Lake by <a href="https://www.flickr.com/photos/desomnis/">Angelika Hörschläger</a>'
+      }, {
+        src: 'https://c1.staticflickr.com/5/4364/35774111373_187963664b_h.jpg',
+        caption: 'A foggy summer day by <a href="https://www.flickr.com/photos/desomnis/">Angelika Hörschläger</a>'
+      }, {
+        src: 'https://c1.staticflickr.com/8/7737/28617607314_170a8e6752_k.jpg',
+        caption: 'My Silver Lining (explore) by <a href="https://www.flickr.com/photos/desomnis/">Angelika Hörschläger</a>'
+      }]);
+
+    });
+
+    // initialize manually with a list of links
+    $('[data-gallery=manual]').click(function (e) {
+
+      e.preventDefault();
+
+      var items = [],
+        options = {
+          index: $(this).index()
+        };
+
+      $('[data-gallery=manual]').each(function () {
+        let src = $(this).attr('href');
+        items.push({
+          src: src
+        });
+      });
+
+      new PhotoViewer(items, options);
+
+    });
+
+    // jQuery plugin
+    $('[data-gallery=jquery]').photoviewer();
+
+  </script>
+</body>
+</html>

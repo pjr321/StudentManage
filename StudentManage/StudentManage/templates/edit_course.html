@@ -1,0 +1,129 @@
+{% extends 'layout.html'%}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/plugin/bootstrap-select-1.13.9/dist/css/bootstrap-select.css"/>
+    <style>
+        .edit-body{
+            padding-left: 20px;
+        }
+        .information{
+            margin: 20px 5px;
+            width: 500px;
+            padding: 20px 0;
+        }
+        .information label{
+            margin-top: 5px;
+            font-size: 17px;
+        }
+        .information-tea{
+            margin: 15px 5px;
+            width: 600px;
+            padding: 20px 0;
+            display: flex;
+        }
+        .information-tea label{
+            margin-top: 5px;
+            font-size: 17px;
+        }
+    </style>
+{% endblock %}
+
+{% block xx%}
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <ol class="breadcrumb">
+              <li><a href="/top/">首页</a></li>
+              <li><a href="/student/">课程管理</a></li>
+               <li><a href="#">编辑课程</a></li>
+    </ol>
+    <div class="edit-body">
+            <div class="information">
+                <label for="course_name" class="col-sm-2 control-label">课程名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="course_name" placeholder="课程名" value="{{result.course_name}}">
+                </div>
+            </div>
+            <div class="information">
+                <label for="credit" class="col-sm-2 control-label">学分</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="credit" placeholder="学分" value="{{result.credit}}">
+                </div>
+            </div>
+            <div class="form-group information-tea">
+                    <label for="course_name" class="col-sm-2 control-label">任课教师</label>
+                    <select name="teacher_id" class="selectpicker" id="teacher_id" type="text">
+                    </select>
+            </div>
+            <input id="edit" class="btn btn-lg btn-primary" style="margin: 30px 20px;" type="submit" value="提交"/>
+            <input id="back" class="btn btn-lg btn-danger" style="margin: 30px 20px;" type="submit" value="返回"/>
+            <input id="edit_id" class="hide" value="{{result.id}}">
+    </div>
+</body>
+{%endblock%}
+
+    {% block js %}
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="/static/plugin/bootstrap-select-1.13.9/dist/js/bootstrap-select.js"></script>
+        <script src="/static/plugin/bootstrap-select-1.13.9/dist/js/i18n/defaults-zh_CN.js"></script>
+        <script src="/static/plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script>
+            $(function () {
+                $('#edit').click(function () {
+                    $.ajax({
+                        url: '/edit_course/',
+                        type: 'POST',
+                        data: {'course_name':$('#course_name').val(),
+                               'credit':$('#credit').val(),
+                               'teacher_number':$('#teacher_id').val(),
+                               'nid': $('#edit_id').val()
+                        },
+                        success: function (arg) {
+                            arg = JSON.parse(arg);
+                            if(arg.status)
+                            {
+                                var myMessage=confirm("修改成功");
+                                if(myMessage==true)
+                                {
+                                    location.href='/course/';
+                                }
+                                else if(myMessage==false)
+                                {
+                                    location.href='/course/';
+                                }
+                            }
+                            else
+                            {
+                                alert(arg.message);
+                            }
+                        }
+                    })
+                });
+                $('#back').click(function () {
+                    window.history.go(-1);
+                });
+            })
+            function LoadData() {
+                var tlist = eval("{{teacher_list|safe}}");  // 双引号！
+                var result = [];
+                var tid = eval('{{result.teacher_id|safe}}');
+                console.log(typeof(tid));
+                for(var i=0;i<tlist.length;i++)
+                {
+                    var data = tlist[i];
+                    if (tid == i+1)
+                    {result.push('<option value="'+ data.teacher_number + '" selected>' + data.name + '</option>');}
+                    else
+                    {result.push('<option value="'+ data.teacher_number + '">' + data.name + '</option>');}
+                }
+                $('#teacher_id').html(result.join(''));
+            }
+            $(function () {
+                LoadData();
+                $('.selectpicker').selectpicker('refresh');
+                $('.selectpicker').selectpicker('render');
+            }
+        );
+        </script>
+    {% endblock %}

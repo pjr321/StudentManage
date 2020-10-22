@@ -1,0 +1,278 @@
+{% extends 'layout.html' %}
+
+{% block css%}
+    <style>
+        .widgets{
+            float: left;
+            width: 363px;
+            height: 150px;
+            background-color: #63c2de;
+            margin: 0 20px;
+            padding: 10px;
+            color: white;
+            position: relative;
+            border-radius: 10px;
+        }
+        h4{
+            margin-bottom: 0;
+        }
+        .count{
+            padding-left: 10px;
+        }
+        .text-light{
+            padding-left: 10px;
+            margin-bottom: -20px;
+        }
+        .chart-wrapper{
+            margin: 20px 0;
+            width: auto;
+            height: 70px;
+        }
+        .log{
+            width: 80%;
+            padding: 20px;
+            margin: 10px auto;
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .wid1{
+            background-color: #1d7db1;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid2{
+            background-color: yellowgreen;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid3{
+            background-color: #6c757d;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .head{
+            display: flex;
+            height: 130px;
+            line-height: 130px;
+            border-bottom: 2px solid#ddd;
+            box-shadow:4px 4px 5px #999;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px auto;
+        }
+        .head img{
+            width: 80px;
+            height: 100px;
+            margin-left: 400px;
+        }
+        .head h1{
+            font-size: 50px;
+            margin-left: 20px;
+            color: #1e347b;
+            font-family: 'Courgette', cursive;
+            font-weight: bold;
+        }
+        .wel{
+            margin: 0 auto;
+            display: flex;
+            padding: 50px 80px;
+            /*width: 1280px;*/
+            /*height: 780px;*/
+            /*background: url("/static/picture/timg.jpg" );*/
+            /*background-size: 1280px 780px;*/
+        }
+        .wel p{
+            margin-left: 20px;
+        }
+        h1{
+            font-size: 40px;
+            margin: 30px 25px;
+            color: #1e347b;
+            font-family: 'Courgette', cursive;
+            font-weight: bold;
+        }
+        .wel img{
+            width: 500px;
+            height: 400px;
+        }
+        .wel_text{
+            margin-top: 10px;
+        }
+    </style>
+{% endblock %}
+{% block xx %}
+    <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+    </ol>
+<!--    <div class="head">-->
+<!--        <img src="/static/picture/lllogo.png">-->
+<!--        <h1>教务管理系统</h1>-->
+<!--    </div>-->
+    <div class="wel">
+        <div>
+            <img src="/static/picture/welc.PNG">
+        </div>
+        <div class="wel_text">
+            <p style="font-size: 70px;color: #1e347b">WELCOME</p>
+            <h1>欢迎使用学生后台管理系统</h1>
+            <p style="font-size: 30px">用户类型：管理员</p>
+            <p style="font-size: 30px">用户名：{{user_name}}</p>
+        </div>
+    </div>
+    <div>
+
+    </div>
+{% endblock %}
+
+{% block js%}
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/static/plugin/Chart.bundle.min.js"></script>
+    <script>
+        $(function () {
+        //严格模式
+        "use strict";
+
+        // Counter Number
+        $('h3').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+
+        //widgetChart1
+        var ctx = document.getElementById( "widgetChart1" );
+        ctx.height = 150;
+        var myChart = new Chart( ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                type: 'line',
+                datasets: [ {
+                    data: [1, 18, 9, 17, 34, 22, 11],
+                    label: 'Dataset',
+                    backgroundColor: '#63c2de',
+                    borderColor: 'rgba(255,255,255,.55)',
+                }, ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [ {
+                        display:false,
+                        gridLines: {
+                            color: 'transparent',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks: {
+                            fontSize: 2,
+                            fontColor: 'transparent'
+                        }
+                    } ],
+                    yAxes: [ {
+                        display:false,
+                        ticks: {
+                            display: false,
+                        }
+                    } ]
+                },
+                title: {
+                    display: false,
+                },
+                elements: {
+                    line: {
+                        tension: 0.00001,
+                        borderWidth: 1
+                    },
+                    point: {
+                        radius: 4,
+                        hitRadius: 10,
+                        hoverRadius: 4
+                    }
+                }
+            }
+        } );
+
+
+        var ctx = document.getElementById( "widgetChart2" );
+        ctx.height = 150;
+        var myChart = new Chart( ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                type: 'line',
+                datasets: [ {
+                    data: [65, 59, 84, 84, 51, 55, 40],
+                    label: 'Dataset',
+                    backgroundColor: 'transparent',
+                    borderColor: 'rgba(255,255,255,.55)',
+                }, ]
+            },
+            options: {
+
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [ {
+                        gridLines: {
+                            color: 'transparent',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks: {
+                            fontSize: 2,
+                            fontColor: 'transparent'
+                        }
+                    } ],
+                    yAxes: [ {
+                        display:false,
+                        ticks: {
+                            display: false,
+                        }
+                    } ]
+                },
+                title: {
+                    display: false,
+                },
+                elements: {
+                    line: {
+                        borderWidth: 1
+                    },
+                    point: {
+                        radius: 4,
+                        hitRadius: 10,
+                        hoverRadius: 4
+                    }
+                }
+            }
+        } );
+    })
+    </script>
+{% endblock %}

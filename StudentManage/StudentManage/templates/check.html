@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继续</title>
+</head>
+<body>
+
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function () {
+            rec();
+    });
+    function rec() {
+        var myMessage=confirm("添加成功，继续添加或返回");
+        if(myMessage==true)
+        {
+            location.href='/add_student/';
+        }
+        else if(myMessage==false)
+        {
+            location.href='/student/';
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,313 @@
+        body{
+            margin: 0;
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float: right;
+        }
+        .pg-header{
+            height: 48px;
+            min-width: 1000px;
+            background: #204d74;
+            line-height: 48px;
+        }
+        .pg-header .logo{
+            width: 250px;
+            line-height: 48px;
+            display: inline-block;
+        }
+
+        .logo-img{
+            width: 36px;
+            height: 36px;
+            padding-left: 5px;
+            margin-right: 5px;
+        }
+        .pg-header .logo-text{
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            text-decoration:none;
+        }
+        .pg-header .rmenus a{
+            #font-size: 20px;
+            display: inline-block;
+            padding: 0 10px;
+            color: white;
+            text-decoration:none;
+        }
+        #global_search{
+            display: inline-block;
+            line-height: 20px;
+            width: 130px;
+            padding: 0 10px;
+            border-radius: 10px;
+            border:0;outline:none;   //去除蓝色边框
+        }
+        #global_search:focus{
+            border-color: #66afe9;
+              outline: 0;
+              -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+                      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        }
+        .pg-header .avatar{
+            cursor: pointer;
+            padding: 0 10px;
+            margin-right: 10px;
+            position: relative;
+        }
+        .pg-header .avatar .avatar-img{
+            border: 1.5px solid #ddd;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+        .user-info{
+            display: none;
+            position: absolute;width: 100px;top: 48px;right: 2px;background-color: #737373;color: white;z-index: 100
+        }
+        .pg-header .avatar:hover .user-info{
+            display: block;
+        }
+        .user-info a{
+            display: block;
+            color: white;
+            padding: 0 15px;
+            font-size: small;
+        }
+        .user-info a:hover{
+            background-color: #595959;
+            text-decoration:none;
+        }
+        .menus{
+            width: 200px;
+            position: absolute;
+            left: 0;
+            top: 48px;
+            bottom: 0;
+            background: #1b6d85;
+            z-index: 99;
+            cursor: pointer;
+        }
+        .pg-body .menus a{
+            width: 200px;
+            height: 50px;
+            font-size: 17px;
+            color: white;
+            display: block;
+            padding: 10px 10px;
+            border-bottom: 1px solid #dddddd;
+            border-bottom-style: groove;
+            text-decoration:none;
+        }
+        /*.pg-body .menus .box:hover:before {*/
+        /*content: '';*/
+        /*width: 200px;*/
+        /*height: 50px;*/
+        /*box-sizing: border-box;*/
+        /*border: 1px solid;*/
+        /*position: absolute;*/
+        /*animation: boxBorder 6s linear infinite;*/
+        /*}*/
+        /*.pg-body .menus .box:hover:after {*/
+        /*content: '';*/
+        /*width: 200px;*/
+        /*height: 50px;*/
+        /*box-sizing: border-box;*/
+        /*border: 1px solid;*/
+        /*position: absolute;*/
+        /*animation: boxBorder 6s linear infinite;*/
+        /*}*/
+        .pg-body .menus .box:hover a{
+            background-color: #66afe9;
+        }
+        .pg-body .detail{
+            padding: 0 15px;
+        }
+        .pg-body .mypager{
+            margin: -30px 0 0 0;
+            float: right;
+        }
+        .content{
+            position: absolute;
+            left: 200px;
+            right: 0;
+            top: 48px;
+            bottom: 0;
+            overflow: scroll;
+        }
+        .hide{
+            display: none;
+        }
+        a:hover {
+            cursor:pointer; color: #b9def0; text-decoration: none;
+        }/* 鼠标移动到链接上 */
+        a:active {
+            color: #F0F;
+        } /* 选定的链接 */
+        .box{
+            /*width: 200px;*/
+            /*height: 50px;*/
+            /*box-sizing: border-box;*/
+            /*border: 1px solid #cb6341;*/
+            /*position: fixed;*/
+            /*margin-top: -100px;*/
+            /*margin-left: -100px;*/
+            /*!*cursor: pointer;*!*/
+        }
+        .box:before {
+        animation-delay: -3s;
+        }
+        @keyframes boxBorder {
+        /*0% {*/
+        /*        border-color: #fff;*/
+        /*        clip: rect(0, 220px, 2px, 0);*/
+        /*}*/
+        /*25% {*/
+        /*        border-color: yellow;*/
+        /*        clip: rect(0px, 218px, 195px, 218px)*/
+        /*}*/
+        /*50% {*/
+        /*        border-color: blue;*/
+        /*        clip: rect(195px, 220px, 195px, 0)*/
+        /*}*/
+        /*75% {*/
+        /*        border-color: green;*/
+        /*        clip: rect(0, 2px, 180px, 0)*/
+        /*}*/
+        /*100% {*/
+        /*        border-color: #fff;*/
+        /*        clip: rect(0, 220px, 2px, 0)*/
+        /*}*/
+}
+    .link{
+        color: #555;
+        font-family: 'Courgette', cursive;
+        font-size: 26px;
+        line-height: 48px;
+        display: inline-block;
+        position: absolute;
+        /*top: 5px;*/
+        z-index: 1;
+        transition: all 0.5s;
+    }
+    .link:hover{ color: transparent; }
+    .link:before,
+    .link:after{
+        content: attr(data-hover);
+        white-space: nowrap;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transition:all 0.5s;
+    }
+    .link:after{
+        color: #eb900a;
+        opacity: 0;
+        left: -10px;
+    }
+    .link:hover:before{
+        left: 15px;
+        opacity: 0;
+    }
+    .link:hover:after{
+        left: 0;
+        opacity: 1;
+        transition-delay:0.1s;
+    }
+    @media only screen and (max-width: 990px){
+        .link span{ font-size: 20px; }
+    }
+    @media only screen and (max-width: 767px){
+        .link{ margin: 0 0 30px; }
+    }
+
+
+  aside.left-panel {
+      background: #272c33;
+      display: table-cell;
+      width: 200px;
+      position: absolute;
+      left: 0;
+      top: 48px;
+      bottom: 0;
+      /*min-height: 100%;*/
+      /*padding: 0 25px;*/
+      vertical-align: top;
+      -webkit-transition:width 0.3s ease;
+      transition: width 0.3s ease;
+  }
+    .navbar-nav li > a {
+        display: flex;
+        justify-content: space-around;
+        background: none !important;
+        color: #c8c9ce !important;
+        /*display: inline-block;*/
+        font-family: 'Open Sans',serif;
+        font-size: 16px;
+        line-height: 30px;
+        padding: 15px 0;
+        position: relative;
+        width: 150px;
+        border-bottom: 1px solid #ddd}
+    .navbar-nav li >a:hover{
+     color: #fff !important;
+    }
+    .navbar-nav li >a i{
+    float: left;
+        margin-top: 6px;
+
+    }
+
+    .card{
+        border: 1px solid #ddd;
+    }
+    .card-header{
+        padding: 10px;
+        margin-bottom: 0px;
+        border-bottom: 1px solid #ddd;
+        background-color: rgba(0,0,0,.03);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-title{
+        font-size: 20px;
+    }
+    .card-body{
+        padding: 10px 10px 45px 10px;
+    }
+    .card-search{
+        padding: 10px 0;
+        display: inline-block;
+    }
+    table thead tr th a {
+        float: right;
+        opacity: 0.3;
+        margin-top: 1px;
+    }
+    .row{
+        display: flex;
+        width: 250px;
+    }
+    .row label{
+        width: 80px;
+        margin: 5px 10px 0 15px;
+        align-items: center;
+    }
+    .specify-page{
+        display: inline-block;
+        width: 150px;
+        margin-top: 18px;
+    }
+
+    .export{
+        display: inline-block;
+        float: right;
+        padding-right: 20px;
+        margin-top: 13px;
+    }

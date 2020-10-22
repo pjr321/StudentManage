@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+
+{% block css%}
+    <style>
+        .ana{
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            box-shadow:4px 4px 5px #999
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .wid1{
+            background-color: #1d7db1;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid2{
+            background-color: yellowgreen;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid3{
+            background-color: #6c757d;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block xx%}
+    <ol class="breadcrumb">
+              <li><a href="/top/">首页</a></li>
+              <li><a href="#">数据分析</a></li>
+    </ol>
+    <div class="header">
+        <div class="wid1">
+            <h3>
+                {{stu_num}}
+            </h3>
+            <p>
+                学生总人数
+            </p>
+        </div>
+        <div class="wid2">
+            <h3>
+                {{cou_num}}
+            </h3>
+            <p>
+                课程总数
+            </p>
+        </div>
+        <div class="wid3">
+            <h3>
+                {{tea_num}}
+            </h3>
+            <p>
+                教师总人数
+            </p>
+        </div>
+    </div>
+
+    <div class="ana">
+        {{bar|safe}}
+    </div>
+    <div class="ana">
+        {{bar_c|safe}}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(function () {
+            "use strict";
+            $('h3').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+        })
+    </script>
+{% endblock %}

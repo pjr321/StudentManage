@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block css%}
+    <style>
+        .widgets{
+            float: left;
+            width: 363px;
+            height: 150px;
+            background-color: #63c2de;
+            margin: 0 20px;
+            padding: 10px;
+            color: white;
+            position: relative;
+            border-radius: 10px;
+        }
+        h4{
+            margin-bottom: 0;
+        }
+        .count{
+            padding-left: 10px;
+        }
+        .text-light{
+            padding-left: 10px;
+            margin-bottom: -20px;
+        }
+        .chart-wrapper{
+            margin: 20px 0;
+            width: auto;
+            height: 70px;
+        }
+        .log{
+            width: 100%;
+            padding: 20px;
+            margin: 10px auto;
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .wid1{
+            background-color: #1d7db1;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid2{
+            background-color: yellowgreen;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+        .wid3{
+            background-color: #6c757d;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+{% block xx %}
+    <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li><a href="#">操作日志</a></li>
+    </ol>
+    <div class="log">
+        <h2>操作日志</h2>
+        <table class="table table-striped">
+                <thead>
+                            <tr>
+                                <th>ID
+                                    <a class="glyphicon glyphicon-sort sort_id"></a>
+                                </th>
+                                <th>操作员</th>
+                                <th>操作</th>
+                                <th>对象表</th>
+                                <th>对象id</th>
+                                <th>修改值</th>
+                                <th>操作时间</th>
+                            </tr>
+                </thead>
+                        <tbody>
+                            {% for row in log%}
+                                <tr>
+                                    <td>{{row.id}}</td>
+                                    <td>{{row.operator}}</td>
+                                    <td>{{row.operation}}</td>
+                                    <td>{{row.target_table}}</td>
+                                    <td>{{row.target_id}}</td>
+                                    <td>{{row.modify_value}}</td>
+                                    <td>{{row.time}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+            </table>
+        </div>
+{% endblock %}
+
+{% block js%}
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/static/plugin/Chart.bundle.min.js"></script>
+    <script>
+        $(function () {
+        //严格模式
+        "use strict";
+
+        // Counter Number
+        $('h3').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+    })
+    </script>
+{% endblock %}

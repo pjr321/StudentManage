@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/plugin/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .logo{
+            text-align: center;
+            margin: 30px auto 20px auto;
+        }
+        h3{
+            /*font-family: 'KaiTi' ,serif;*/
+            text-align: center;
+            font-weight: bold;
+        }
+        body{
+            background: url("/static/picture/background.jpg");
+            background-size: 1920px 950px;
+        }
+        label{
+            margin: 8px 0px;
+        }
+        form{
+            border: 1px solid #dddddd;
+            border-radius: 2px;
+            padding: 20px 30px 20px;
+            background-color: #dddddd;
+        }
+        .register{
+            border-top: 1px solid #4cd964;
+            margin: 30px auto 0 auto;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 460px;margin: 40px auto;">
+            <div class="logo">
+                <img src="/static/picture/lllogo.png">
+            </div>
+            <form method="post" class="form-horizontal" action="/sign/">
+                <h3>学生后台管理系统</h3>
+                <div class="form-group" style="margin: 0 auto">
+                    <label>用户名</label>
+                    <input style="width:400px;margin: 0 auto" type="text" class="form-control" id="user_name" placeholder="用户名" name="user_name">
+                </div>
+
+                <div class="form-group" style="margin: 0 auto">
+                    <label>密码</label>
+                    <input style="width:400px;margin: 0 auto" type="password" class="form-control" id="password" placeholder="密码" name="password">
+                </div>
+
+                <div class="form-group"style="padding-left: 20px">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox">记住我
+                        </label>
+                      </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 auto">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+                </div>
+
+                <div class="register">
+                    还没有账号？
+                    <a href="register.html">点击注册</a>
+                </div>
+            </form>
+    </div>
+
+
+    {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+                location.href='/sign/';
+            {% endfor %}
+        </script>
+    {% endif %}
+</body>
+</html>

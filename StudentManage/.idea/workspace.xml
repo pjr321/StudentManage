@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4634fd59-fb87-4d27-aebd-40151beaa9a8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="StudentManage" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Zkrr4JDKXQNCLxvX89K1wFMAX1" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/StudentManage/static/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="StudentManage" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="StudentManage" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HANSR\Desktop\python\django\StudentManage\StudentManage\static\js" />
+      <recent name="C:\Users\HANSR\Desktop\python\django\StudentManage\StudentManage\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HANSR\Desktop\python项目\StudentManage\StudentManage\static\css" />
+      <recent name="C:\Users\HANSR\Desktop\python\django\StudentManage\StudentManage\static\plugin" />
+      <recent name="C:\Users\HANSR\Desktop\python\django\StudentManage\utils" />
+      <recent name="C:\Users\HANSR\Desktop\python\django\StudentManage\StudentManage\static\picture" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="descriptor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="StudentManage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StudentManage/templates" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StudentManage/templates/descriptor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python">
+      <module name="StudentManage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver 127.0.0.1:8000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.descriptor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4634fd59-fb87-4d27-aebd-40151beaa9a8" name="Default Changelist" comment="" />
+      <created>1585394128790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585394128790</updated>
+      <workItem from="1585746738397" duration="93000" />
+      <workItem from="1585747914131" duration="125000" />
+      <workItem from="1585750276723" duration="19000" />
+      <workItem from="1585750306126" duration="655000" />
+      <workItem from="1585751462013" duration="85000" />
+      <workItem from="1585751557154" duration="507000" />
+      <workItem from="1585752534394" duration="100000" />
+      <workItem from="1585752922975" duration="54000" />
+      <workItem from="1585753097593" duration="40000" />
+      <workItem from="1585753145230" duration="20000" />
+      <workItem from="1585753182311" duration="3377000" />
+      <workItem from="1585790909773" duration="842000" />
+      <workItem from="1585887726489" duration="12732000" />
+      <workItem from="1585927204816" duration="2402000" />
+      <workItem from="1585963877464" duration="21869000" />
+      <workItem from="1586012866198" duration="657000" />
+      <workItem from="1586056337650" duration="1885000" />
+      <workItem from="1586065898484" duration="1454000" />
+      <workItem from="1586266539182" duration="1228000" />
+      <workItem from="1586758119141" duration="20924000" />
+      <workItem from="1586785712360" duration="5103000" />
+      <workItem from="1586829224175" duration="15938000" />
+      <workItem from="1586866484223" duration="269000" />
+      <workItem from="1587189495459" duration="202000" />
+      <workItem from="1590222881716" duration="1798000" />
+      <workItem from="1590403521510" duration="14800000" />
+      <workItem from="1590469089693" duration="7959000" />
+      <workItem from="1590484704475" duration="11048000" />
+      <workItem from="1590648553818" duration="750000" />
+      <workItem from="1590808776394" duration="2103000" />
+      <workItem from="1591172345183" duration="1830000" />
+      <workItem from="1591268830400" duration="13392000" />
+      <workItem from="1591433599603" duration="5684000" />
+      <workItem from="1591679773547" duration="41035000" />
+      <workItem from="1591851891145" duration="17318000" />
+      <workItem from="1591960087141" duration="34745000" />
+      <workItem from="1592146401437" duration="36725000" />
+      <workItem from="1592700208990" duration="1707000" />
+      <workItem from="1592748385144" duration="6401000" />
+      <workItem from="1592787836403" duration="27215000" />
+      <workItem from="1592894492877" duration="1031000" />
+      <workItem from="1592895876238" duration="1844000" />
+      <workItem from="1592898546747" duration="140000" />
+      <workItem from="1592898749244" duration="1011000" />
+      <workItem from="1592901746542" duration="7745000" />
+      <workItem from="1593000594007" duration="109000" />
+      <workItem from="1593343987906" duration="72021000" />
+      <workItem from="1593688429565" duration="16320000" />
+      <workItem from="1593914120011" duration="10431000" />
+      <workItem from="1596369317714" duration="50000" />
+      <workItem from="1600219525271" duration="682000" />
+      <workItem from="1600242076774" duration="396000" />
+      <workItem from="1600244265048" duration="1203000" />
+      <workItem from="1600602968381" duration="6464000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#JSHint" timestamp="1592230718170">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#JSHint/0.0.1920.1040@0.0.1920.1040" timestamp="1592230718170" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592896055766">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592896055766" />
+    <state x="1075" y="412" key="FileChooserDialogImpl" timestamp="1592703054647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1075" y="412" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592703054647" />
+    <state width="1397" height="61" key="GridCell.Tab.0.bottom" timestamp="1600695499152">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="61" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1600695499152" />
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594032052884" />
+    <state width="1397" height="61" key="GridCell.Tab.0.center" timestamp="1600695499152">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="61" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1600695499152" />
+    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594032052884" />
+    <state width="1397" height="61" key="GridCell.Tab.0.left" timestamp="1600695499152">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="61" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1600695499152" />
+    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594032052883" />
+    <state width="1397" height="61" key="GridCell.Tab.0.right" timestamp="1600695499152">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="61" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1600695499152" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594032052884" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1592389321671">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592389321671" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1592389321671">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592389321671" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1592389321671">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592389321671" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1592389321671">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592389321671" />
+    <state x="297" y="129" key="SettingsEditor" timestamp="1593605618249">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="223" y="114" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1593592845496" />
+    <state x="297" y="129" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593605618249" />
+    <state x="511" y="220" width="896" height="767" key="search.everywhere.popup" timestamp="1593653392998">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1593346634075" />
+    <state x="511" y="220" width="896" height="767" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593653392998" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/StudentManage$descriptor.coverage" NAME="descriptor Coverage Results" MODIFIED="1592374490877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StudentManage/templates" />
+    <SUITE FILE_PATH="coverage/StudentManage$manage.coverage" NAME="manage Coverage Results" MODIFIED="1600609545788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
